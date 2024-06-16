@@ -37,7 +37,7 @@ class _NotesCreate extends State<NotesCreate>{
             ),
          IconButton(onPressed: () async {
            dataBaseHandler!.insert(NotesModel(title: titleController.text.toString(), message: messageController.text.toString()));
-           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
 
          }, icon: Icon(Icons.check_circle_outline_rounded , size: 40 ,) ,splashColor: Colors.orange,
          )

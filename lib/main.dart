@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:notes_new/screen/createnotesscreen.dart';
 import 'package:notes_new/screen/home_screen.dart';
+import 'package:notes_new/screen/splash_creen.dart';
 
 void main() {
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomeScreen()
+      home: SplashScreen()
     );
   }
 }
