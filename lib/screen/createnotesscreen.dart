@@ -20,25 +20,29 @@ class _NotesCreate extends State<NotesCreate>{
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     dataBaseHandler = DataBaseHandler();
   }
 
   @override
   Widget build(BuildContext context) {
-   return Scaffold( appBar: AppBar(
+   return Scaffold(
+
+     /////////////// App Bar ////////////////
+     appBar: AppBar(
      title: Row(
        mainAxisAlignment: MainAxisAlignment.spaceBetween,
        children: [
-         Text(
-         " Write Notes",
+         Text(" Write Notes",
          style: TextStyle(fontSize: 30, color: appTitle),
             ),
-         IconButton(onPressed: () async {
-           dataBaseHandler!.insert(NotesModel(title: titleController.text.toString(), message: messageController.text.toString()));
-           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
 
+         /// Icon Check Button
+         IconButton(onPressed: () async {
+           dataBaseHandler!.insert(NotesModel(
+               title: titleController.text.toString(),
+               message: messageController.text.toString()));
+           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
          }, icon: Icon(Icons.check_circle_outline_rounded , size: 40 ,) ,splashColor: Colors.orange,
          )
        ],
@@ -46,10 +50,12 @@ class _NotesCreate extends State<NotesCreate>{
          backgroundColor: appBarColor
    ) ,
        backgroundColor: appBackGround,
+
+     ////////////////// Body /////////////
      body: Column(
        children: [
 
-         //////////////////////////////////////////////// Title Box  //////////////////
+         ////////////////////////////// Title Box  //////////////////
          Padding(
            padding: const EdgeInsets.only(top: 10 , left: 8 , right: 10),
            child: TextField(

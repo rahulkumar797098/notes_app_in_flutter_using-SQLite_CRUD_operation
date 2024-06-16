@@ -8,7 +8,8 @@ import '../colors.dart';
 class UpdateScreen extends StatefulWidget {
   final NotesModel note;
 
-  UpdateScreen({required this.note});
+  /// here we create contractor
+  const UpdateScreen({required this.note});
 
   @override
   State<StatefulWidget> createState() => _UpdateScreenState();
@@ -46,15 +47,16 @@ class _UpdateScreenState extends State<UpdateScreen> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "Notes | Read | Update",
+              const Text("Note Update",
                 style: TextStyle(fontSize: 25, color: appTitle),
               ),
+
+              // Check Button
               IconButton(
                 onPressed: () async {
-                  await updateNote();
+                  await updateNote();  // call function
                 },
-                icon: Icon(
+                icon:const Icon(
                   Icons.check_circle_outline_rounded,
                   size: 40,
                 ),
